@@ -4,6 +4,7 @@ from config import config
 from .avwatchhandler import AVWatchHandler
 from watchdog.observers import Observer
 
+
 class LiveScanner(object):
     """
     ThinAV live file scanner module

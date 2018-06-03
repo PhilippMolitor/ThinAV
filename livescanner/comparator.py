@@ -2,13 +2,15 @@ import hashlib
 import sys
 import requests
 
+
 class Comparator(object):
     """
     Compares a file to the VirusTotal database
     """
 
     database = {
-        'eca1a641f552c4af3288c6a3f94519c299e65c36206108405090adecae73bc4c': 'ThinAV test definition'
+        'eca1a641f552c4af3288c6a3f94519c299e65c36206108405090adecae73bc4c':
+        'ThinAV test definition'
     }
 
     def __init__(self):
@@ -27,7 +29,7 @@ class Comparator(object):
             with open(path, 'rb') as f:
                 for block in iter(lambda: f.read(65536), b''):
                     sha256.update(block)
-        except:
+        except Exception:
             pass
 
         return sha256.hexdigest()
@@ -38,10 +40,10 @@ class Comparator(object):
         else:
             return False, ''
 
-
     """
     def _check_virustotal(self, sha256_hash):
-        url = 'https://www.virustotal.com/ui/search?query={}'.format(sha256_hash)
+        url = 'https://www.virustotal.com/ui/search?query={}'.format(
+        sha256_hash)
 
         try:
             data = requests.get(url)

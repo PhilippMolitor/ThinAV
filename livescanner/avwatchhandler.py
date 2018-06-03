@@ -1,6 +1,7 @@
 from watchdog.events import FileSystemEventHandler
 from .comparator import Comparator
 
+
 class AVWatchHandler(FileSystemEventHandler):
     """
     Watchdog handler class for ThinAV
@@ -17,8 +18,9 @@ class AVWatchHandler(FileSystemEventHandler):
         self._scan(event)
 
     def _scan(self, event):
-        if event.is_directory == False:
-            is_virus, definition = self.comparator.get_definition(event.src_path)
+        if event.is_directory is False:
+            is_virus, definition = self.comparator.get_definition(
+                event.src_path)
 
             if is_virus:
                 self.callback(event.src_path, definition)
