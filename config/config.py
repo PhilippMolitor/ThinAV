@@ -1,1 +1,1 @@
-TAV_SCAN_PATH = 'C:\\'
+TAV_SCAN_PATH = '/'
