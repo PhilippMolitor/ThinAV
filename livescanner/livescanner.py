@@ -1,23 +1,20 @@
 import time
-
-from config import config
 from .avwatchhandler import AVWatchHandler
 from watchdog.observers import Observer
 
 
 class LiveScanner(object):
-    """
-    ThinAV live file scanner module
-    """
+    """ThinAV live file scanner module"""
 
-    def __init__(self):
-        pass
+    def __init__(self, path):
+        self.scan_path = path
+        print("Spawned livescanner for directory {}".format(path))
 
     def watch(self):
         handler = AVWatchHandler(self.handle_found_file)
 
         observer = Observer()
-        observer.schedule(handler, config.TAV_SCAN_PATH, recursive=True)
+        observer.schedule(handler, self.scan_path, recursive=True)
         observer.start()
 
         try:
