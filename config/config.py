@@ -1,1 +1,0 @@
-TAV_SCAN_PATH = '/'
