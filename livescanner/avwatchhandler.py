@@ -3,9 +3,7 @@ from .comparator import Comparator
 
 
 class AVWatchHandler(FileSystemEventHandler):
-    """
-    Watchdog handler class for ThinAV
-    """
+    """Watchdog handler class for ThinAV"""
 
     def __init__(self, callback):
         self.comparator = Comparator()
@@ -19,8 +17,7 @@ class AVWatchHandler(FileSystemEventHandler):
 
     def _scan(self, event):
         if event.is_directory is False:
-            is_virus, definition = self.comparator.get_definition(
-                event.src_path)
+            match, definition = self.comparator.get_definition(event.src_path)
 
-            if is_virus:
+            if match is True:
                 self.callback(event.src_path, definition)

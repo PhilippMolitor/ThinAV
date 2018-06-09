@@ -4,9 +4,7 @@ import requests
 
 
 class Comparator(object):
-    """
-    Compares a file to the VirusTotal database
-    """
+    """Compares a file to the VirusTotal database"""
 
     database = {
         'eca1a641f552c4af3288c6a3f94519c299e65c36206108405090adecae73bc4c':
