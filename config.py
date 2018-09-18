@@ -1,3 +1,3 @@
 import os
 
-tav_scan_path = os.getenv("HOME")
+tav_scan_path = os.getenv("PWD")

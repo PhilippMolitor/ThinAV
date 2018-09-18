@@ -21,6 +21,7 @@ class LiveScanner(object):
             while True:
                 time.sleep(0.1)
         except KeyboardInterrupt:
+            print("\nTerminating ThinAV threads...")
             observer.stop()
 
         observer.join()
