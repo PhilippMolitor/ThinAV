@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Python: Terminal (integrated)",
+        "type": "python",
+        "request": "launch",
+        "program": "${workspaceFolder}/thinav.py",
+        "console": "integratedTerminal",
+        "pythonPath": "${workspaceFolder}/env/bin/python"
+    }]
+}
